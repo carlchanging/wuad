@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">无广告</string>
+    <string name="skip_service_label">无广告 · 跳过引擎</string>
+    <string name="skip_service_desc">按正式 GKD 分类和选择器点击。默认只开开屏广告，同一条 20 秒内不连点。需要在限制设置里放行无障碍。</string>
+    <string name="vpn_notify_title">无广告隧道已开启</string>
+    <string name="vpn_notify_text">DNS / 分流按开关生效。</string>
+    <string name="channel_vpn">隧道</string>
+</resources>

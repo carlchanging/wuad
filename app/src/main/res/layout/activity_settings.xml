@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            style="@style/Wuad.PageTitle"
+            android:text="设置" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="DNS 上游"
+            android:textColor="@color/text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dnsNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/dnsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <EditText
+            android:id="@+id/dnsNewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:hint="自定义名称，例如 家里 DoH"
+            android:padding="12dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/muted"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/dnsNewUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:hint="自定义地址：223.5.5.5 或 https://…/dns-query 或 tls://"
+            android:inputType="textUri"
+            android:padding="12dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/muted"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnDnsAdd"
+                style="@style/Wuad.RowBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="添加上游" />
+            <Button
+                android:id="@+id/btnDnsRestore"
+                style="@style/Wuad.RowBtn"
+                android:layout_width="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="恢复预置" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="自定义拦截域名（一行一个）"
+            android:textColor="@color/text"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/customBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:gravity="top"
+            android:hint="ads.example.com"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            android:padding="12dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/muted" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="自定义放行（优先于 anti-AD）"
+            android:textColor="@color/text"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/customAllow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:gravity="top"
+            android:hint="cdn.my-site.com"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:padding="12dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/muted" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="机场订阅（可多份，Clash / mihomo YAML）"
+            android:textColor="@color/text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="多份会进同一个 PROXY 组，另有 AUTO 自动测速。"
+            android:textColor="@color/muted"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/subList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <EditText
+            android:id="@+id/subNewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:hint="订阅名称，例如 主力"
+            android:padding="12dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/muted"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/subNewUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:hint="https://… 订阅地址"
+            android:inputType="textUri"
+            android:padding="12dp"
+            android:textColor="@color/text"
+            android:textColorHint="@color/muted"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnSubAdd"
+            style="@style/Wuad.RowBtn"
+            android:text="添加订阅" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="跳过分类"
+            android:textColor="@color/text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="11 个分类在 GKD 页，跟正式 GKD 一样。默认只开「开屏广告」。"
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/checkOnOpen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="打开应用时检查 anti-AD / GKD / 分流订阅更新"
+            android:textColor="@color/text" />
+
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/Wuad.RowBtn"
+            android:text="保存" />
+
+        <Button
+            android:id="@+id/btnGeo"
+            style="@style/Wuad.RowBtn"
+            android:text="分流资源 geoip / geosite / ASN" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="内核已内嵌 mihomo。没填机场时 PROXY 走直连，分流规则照样能 REJECT / DIRECT。GKD 不走隧道，开屏出现才点。"
+            android:textColor="@color/warn"
+            android:textSize="13sp" />
+    </LinearLayout>
+</ScrollView>

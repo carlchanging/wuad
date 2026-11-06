@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.22.1)
+project(mihomo_exec)
+add_library(mihomo_exec SHARED mihomo_exec.c)
+find_library(log-lib log)
+target_link_libraries(mihomo_exec ${log-lib})

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true"
+    android:overScrollMode="ifContentScrolls">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="36dp">
+
+        <TextView
+            style="@style/Wuad.PageTitle"
+            android:text="GKD" />
+
+        <LinearLayout
+            style="@style/Wuad.SwitchRow"
+            android:layout_marginTop="16dp">
+            <LinearLayout style="@style/Wuad.SwitchBody">
+                <TextView style="@style/Wuad.SwitchTitle" android:text="跳过广告" />
+                <TextView style="@style/Wuad.SwitchSub" android:text="无障碍按需点开屏「跳过」" />
+            </LinearLayout>
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/swSkip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/a11yLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_banner"
+            android:padding="14dp"
+            android:text="无障碍未开"
+            android:textColor="@color/warn"
+            android:textSize="13sp" />
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="分类（正式 GKD）" />
+
+        <TextView
+            style="@style/Wuad.Caption"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="8dp"
+            android:text="开着该类全部跟，不用去三千条里点。默认只开开屏广告。单条例外进规则列表。" />
+
+        <LinearLayout
+            android:id="@+id/catBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp" />
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="应用" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btnIgnoreApps"
+                style="@style/Wuad.NavRow"
+                android:text="不启用的应用" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/ignoreHint"
+            style="@style/Wuad.Caption" />
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="订阅" />
+
+        <TextView
+            android:id="@+id/presetLine"
+            style="@style/Wuad.Caption"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/url"
+            style="@style/Wuad.Field"
+            android:layout_marginTop="0dp"
+            android:hint="GKD 订阅地址"
+            android:inputType="textUri" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnSaveUrl"
+                style="@style/Wuad.RowBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="保存地址" />
+            <Button
+                android:id="@+id/btnUpdate"
+                style="@style/Wuad.RowBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="更新规则" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnPreset"
+                style="@style/Wuad.RowBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="停用预置" />
+            <Button
+                android:id="@+id/btnRestore"
+                style="@style/Wuad.RowBtn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="恢复预置" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="规则" />
+
+        <LinearLayout
+            android:id="@+id/btnRules"
+            style="@style/Wuad.SwitchRow"
+            android:background="@drawable/bg_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout style="@style/Wuad.SwitchBody">
+                <TextView style="@style/Wuad.SwitchTitle" android:text="规则列表" />
+                <TextView
+                    android:id="@+id/rulesHint"
+                    style="@style/Wuad.SwitchSub"
+                    android:text="按应用查看，点进下一页" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="›"
+                android:textColor="@color/muted"
+                android:textSize="22sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

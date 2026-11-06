@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navHome"
+        android:icon="@drawable/ic_nav_home"
+        android:title="首页" />
+    <item
+        android:id="@+id/navDns"
+        android:icon="@drawable/ic_nav_dns"
+        android:title="DNS" />
+    <item
+        android:id="@+id/navRoute"
+        android:icon="@drawable/ic_nav_route"
+        android:title="分流" />
+    <item
+        android:id="@+id/navGkd"
+        android:icon="@drawable/ic_nav_gkd"
+        android:title="GKD" />
+</menu>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        style="@style/Wuad.PageTitle"
+        android:text="运行态" />
+
+    <RadioGroup
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card"
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <RadioButton android:id="@+id/fAll" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="全部" android:textColor="@color/text" />
+        <RadioButton android:id="@+id/fDns" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DNS" android:textColor="@color/text" />
+        <RadioButton android:id="@+id/fClick" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="点击" android:textColor="@color/text" />
+        <RadioButton android:id="@+id/fConn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="连接" android:textColor="@color/text" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/muted"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnProbe"
+            style="@style/Wuad.RowBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="诊断解析" />
+        <Button
+            android:id="@+id/btnClear"
+            style="@style/Wuad.RowBtn"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="清空" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1" />
+</LinearLayout>

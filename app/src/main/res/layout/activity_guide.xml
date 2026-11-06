@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            style="@style/Wuad.PageTitle"
+            android:text="一加保活" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="ColorOS 16 不认产品名，只认侧载 + 无障碍 + 后台。少一项，VPN 或点击就会失踪。"
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <Button android:id="@+id/btnAcc" style="@style/Wuad.RowBtn" android:text="1. 打开无障碍（限制设置里也要开）" />
+        <Button android:id="@+id/btnBattery" style="@style/Wuad.RowBtn" android:text="2. 电池：无限制" />
+        <Button android:id="@+id/btnNotify" style="@style/Wuad.RowBtn" android:text="3. 通知权限" />
+        <Button android:id="@+id/btnAutostart" style="@style/Wuad.RowBtn" android:text="4. 尝试打开自启动页" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="还要手动：设置 → 应用 → 无广告 → 耗电管理/自启动/关联启动；最近任务里锁定无广告。侧载 App 的无障碍在「限制设置」。"
+            android:textColor="@color/warn"
+            android:textSize="13sp" />
+    </LinearLayout>
+</ScrollView>

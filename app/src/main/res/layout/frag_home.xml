@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true"
+    android:overScrollMode="ifContentScrolls">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="36dp">
+
+        <TextView
+            style="@style/Wuad.PageTitle"
+            android:text="首页" />
+
+        <LinearLayout
+            style="@style/Wuad.SwitchRow"
+            android:layout_marginTop="16dp">
+            <LinearLayout style="@style/Wuad.SwitchBody">
+                <TextView
+                    android:id="@+id/heroTitle"
+                    style="@style/Wuad.SwitchTitle"
+                    android:text="未连接" />
+                <TextView
+                    android:id="@+id/heroDesc"
+                    style="@style/Wuad.SwitchSub"
+                    android:ellipsize="end"
+                    android:minLines="2"
+                    android:maxLines="2" />
+            </LinearLayout>
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/swPower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="连接" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/routeRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:minHeight="76dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="分流"
+                        android:textColor="@color/text"
+                        android:textSize="17sp" />
+                    <TextView
+                        android:id="@+id/nodeLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:minHeight="16dp"
+                        android:singleLine="true"
+                        android:textColor="@color/muted"
+                        android:textSize="13sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/swRoute"
+                    style="@style/Wuad.Switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/line" />
+
+            <RadioGroup
+                android:id="@+id/modes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp">
+                <RadioButton
+                    android:id="@+id/modeRule"
+                    style="@style/Wuad.Segment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="规则" />
+                <RadioButton
+                    android:id="@+id/modeGlobal"
+                    style="@style/Wuad.Segment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="全局" />
+                <RadioButton
+                    android:id="@+id/modeDirect"
+                    style="@style/Wuad.Segment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="直连" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="今日" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/tileDns"
+                style="@style/Wuad.Kpi"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView android:id="@+id/kpiBlock" style="@style/Wuad.KpiValue" android:text="0" />
+                <TextView android:id="@+id/titleDns" style="@style/Wuad.KpiLabel" android:text="DNS 拦截" />
+            </LinearLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="16dp"
+                android:background="@color/line" />
+            <LinearLayout
+                android:id="@+id/tileRoute"
+                style="@style/Wuad.Kpi"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView android:id="@+id/kpiTraffic" style="@style/Wuad.KpiValue" android:text="—" />
+                <TextView android:id="@+id/titleRoute" style="@style/Wuad.KpiLabel" android:text="分流流量" />
+            </LinearLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="16dp"
+                android:background="@color/line" />
+            <LinearLayout
+                android:id="@+id/tileGkd"
+                style="@style/Wuad.Kpi"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView android:id="@+id/kpiClick" style="@style/Wuad.KpiValue" android:text="0" />
+                <TextView android:id="@+id/titleGkd" style="@style/Wuad.KpiLabel" android:text="跳过点击" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/guideWarn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_banner"
+            android:padding="14dp"
+            android:text="锁屏后隧道会丢，先去完成一加保活。"
+            android:textColor="@color/warn"
+            android:textSize="13sp"
+            android:lineSpacingExtra="2dp" />
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="更多" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btnNodes"
+                style="@style/Wuad.NavRow"
+                android:text="节点与订阅" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/line" />
+            <Button
+                android:id="@+id/btnLogs"
+                style="@style/Wuad.NavRow"
+                android:text="运行日志" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/line" />
+            <Button
+                android:id="@+id/btnGuide"
+                style="@style/Wuad.NavRow"
+                android:text="一加保活" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/versionLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:textColor="@color/muted"
+            android:textSize="12sp" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

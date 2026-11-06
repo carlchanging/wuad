@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/presetLine"
+        style="@style/Wuad.Caption"
+        android:layout_marginTop="0dp"
+        android:paddingBottom="8dp" />
+
+    <EditText
+        android:id="@+id/url"
+        style="@style/Wuad.Field"
+        android:layout_marginTop="0dp"
+        android:hint="预置订阅地址"
+        android:inputType="textUri" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnSaveUrl"
+            style="@style/Wuad.RowBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="保存地址" />
+        <Button
+            android:id="@+id/btnUpdate"
+            style="@style/Wuad.RowBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="更新规则" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnPreset"
+            style="@style/Wuad.RowBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="停用预置" />
+        <Button
+            android:id="@+id/btnRestore"
+            style="@style/Wuad.RowBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="恢复预置" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/drill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_card"
+        android:padding="14dp"
+        android:text="← 返回应用列表"
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/search"
+        style="@style/Wuad.Field"
+        android:hint="搜索" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        style="@style/Wuad.RowBtn"
+        android:text="添加规则" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never" />
+</LinearLayout>

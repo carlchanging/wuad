@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true"
+    android:overScrollMode="ifContentScrolls">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="36dp">
+
+        <TextView
+            style="@style/Wuad.PageTitle"
+            android:text="DNS" />
+
+        <LinearLayout
+            style="@style/Wuad.SwitchRow"
+            android:layout_marginTop="16dp">
+            <LinearLayout style="@style/Wuad.SwitchBody">
+                <TextView style="@style/Wuad.SwitchTitle" android:text="去广告" />
+                <TextView style="@style/Wuad.SwitchSub" android:text="本地解析广告域。分流开着也只拦 DNS，不断连接。" />
+            </LinearLayout>
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/swDns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="上游" />
+
+        <TextView
+            android:id="@+id/dnsNow"
+            style="@style/Wuad.Caption"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="8dp" />
+
+        <LinearLayout
+            android:id="@+id/dnsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="12dp">
+            <EditText
+                android:id="@+id/dnsNewName"
+                style="@style/Wuad.Field"
+                android:layout_marginTop="0dp"
+                android:hint="名称" />
+            <EditText
+                android:id="@+id/dnsNewUrl"
+                style="@style/Wuad.Field"
+                android:hint="223.5.5.5 / https://…/dns-query / tls://"
+                android:inputType="textUri" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnDnsAdd"
+                    style="@style/Wuad.RowBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="添加" />
+                <Button
+                    android:id="@+id/btnDnsRestore"
+                    style="@style/Wuad.RowBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="恢复预置" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="自定义" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="12dp">
+            <EditText
+                android:id="@+id/customBlock"
+                style="@style/Wuad.Field"
+                android:layout_marginTop="0dp"
+                android:hint="拦截域名，一行一个"
+                android:inputType="textMultiLine"
+                android:minLines="2" />
+            <EditText
+                android:id="@+id/customAllow"
+                style="@style/Wuad.Field"
+                android:hint="放行域名，优先于订阅名单"
+                android:inputType="textMultiLine"
+                android:minLines="2" />
+            <Button
+                android:id="@+id/btnSaveCustom"
+                style="@style/Wuad.RowBtn"
+                android:text="保存" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="应用" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btnIgnoreApps"
+                style="@style/Wuad.NavRow"
+                android:text="不启用的应用" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/ignoreHint"
+            style="@style/Wuad.Caption" />
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="过滤订阅" />
+
+        <TextView
+            android:id="@+id/subHint"
+            style="@style/Wuad.Caption"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="8dp"
+            android:text="多份合并过滤。AdRules 默认关，打开后点下面更新。" />
+
+        <LinearLayout
+            android:id="@+id/subList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="12dp">
+            <EditText
+                android:id="@+id/subNewName"
+                style="@style/Wuad.Field"
+                android:layout_marginTop="0dp"
+                android:hint="名称，比如 AdRules" />
+            <EditText
+                android:id="@+id/subNewUrl"
+                style="@style/Wuad.Field"
+                android:hint="https://… 域名列表 / hosts / ||domain^"
+                android:inputType="textUri" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnSubAdd"
+                    style="@style/Wuad.RowBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="添加订阅" />
+                <Button
+                    android:id="@+id/btnSubRestore"
+                    style="@style/Wuad.RowBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="恢复预置" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/Wuad.Section"
+            android:text="规则" />
+
+        <include
+            android:id="@+id/rules"
+            layout="@layout/include_rules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
