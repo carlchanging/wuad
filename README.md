@@ -29,7 +29,6 @@ Android **全局只能有一个 `VpnService`**。AdGuard 和 FLClash 开一个�
 5. **侧载能活**：ColorOS / 国产 ROM 上把无障碍、电池、锁定任务写进引导，进程被杀后尽量恢复开关。
 6. **不上传使用数据**：没有统计 SDK，更新只在你点（或你自己打开「启动时检查」）。
 
-这是个人刚需合成，不是三家官方套壳，也不是它们的发行版。
 
 ---
 
@@ -41,17 +40,11 @@ Android **全局只能有一个 `VpnService`**。AdGuard 和 FLClash 开一个�
 Android 只能挂一个 VPN。把 AdGuard DNS 保护、FLClash 分流、GKD 开屏跳过合成一份侧载应用，解决三套软件互踢。不做 HTTPS 中间人。仅 arm64。
 ```
 
-**Topics：**
 
-```
-android  adblock  dns  clash-meta  mihomo  gkd  vpn  sideload  coloros
-```
 
-**Release 标题：** `无广告 0.4.76`
 
 **Release 正文模板：**
 
-```
 Android 只能挂一个 VPN。作者原先同时用 AdGuard DNS、FLClash、GKD，前两个互踢，所以合成这一份侧载应用。
 
 0.4.76 已实现：
@@ -65,11 +58,6 @@ Android 只能挂一个 VPN。作者原先同时用 AdGuard DNS、FLClash、GKD�
 关掉系统「私人 DNS」，否则 53 端口劫持失效。
 ```
 
-完整对标见 [docs/COVERAGE.md](docs/COVERAGE.md)，架构见 [docs/TECH.md](docs/TECH.md)，源码文件见 [docs/SOURCE.md](docs/SOURCE.md)。
-
----
-
-## 0.4.76 已实现
 
 底栏四页：**首页 / DNS / 分流 / GKD**。总开关拉起唯一的 VPN；DNS 与分流可单独关。跳过只吃无障碍，VPN 挂不挂都能点。
 
@@ -173,7 +161,7 @@ python fetch_mihomo.py          # 拉官方 mihomo-android-arm64 v1.19.33 → jn
 
 ## 致谢
 
-日常能力对照这三家，**不是官方套壳，也不是它们的发行版**：
+日常能力对照这三家
 
 - [AdGuard](https://adguard.com/) — DNS 保护思路
 - [FLClash](https://github.com/chen08209/FlClash) / [mihomo](https://github.com/MetaCubeX/mihomo) — 内核与订阅习惯
