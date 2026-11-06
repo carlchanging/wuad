@@ -4,7 +4,7 @@ Android 侧载：一份 `VpnService` 同时做 **DNS 去广告**、**mihomo 分�
 
 当前版本 **0.4.76**（`versionCode` 86）。仅 **arm64-v8a**。
 
-公开时只发本目录 `wuad-android/`，不要把上层原型工具包一并推上去。源码对照见 [docs/SOURCE.md](docs/SOURCE.md)。
+公开时只发本目录 `wuad-android/`，源码对照见 [docs/SOURCE.md](docs/SOURCE.md)。
 
 ---
 
