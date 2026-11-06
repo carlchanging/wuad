@@ -137,8 +137,6 @@ Android 只能挂一个 VPN。作者原先同时用 AdGuard DNS、FLClash、GKD�
 
 ## 隐私
 
-清单里没有剪切板权限，代码也不读剪切板。ColorOS 看见无障碍「可读窗口」，会把剪切板能力一并标上；往输入框粘贴订阅时系统也会提示一次。
-
 出网只有：
 
 1. 你点的规则 / GKD / 机场 / geo 更新
@@ -170,9 +168,6 @@ python fetch_mihomo.py          # 拉官方 mihomo-android-arm64 v1.19.33 → jn
 ./gradlew :app:assembleDebug    # 或 Windows 下 gradle.bat
 ```
 
-产物：`app/build/outputs/apk/debug/app-debug.apk`。
-
-不要把本机 `local.properties`、含机场 token 的截图、SharedPreferences 备份、APK、`libmihomo.so` 提交上去。完整「该提交 / 不该提交」见 [docs/SOURCE.md](docs/SOURCE.md)。
 
 ---
 
